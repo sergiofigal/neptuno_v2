@@ -27,6 +27,7 @@ app.use(_bodyParser.default.json());
 app.use('/usuarios', _ControladorUsuarios.default);
 app.use('/categoria', _ControladorCategorias.default);
 app.use('/post', _ControladorPosts.default);
+app.use('/public', _express.default.static("/home/nicocastillo/Escritorio/Prueba/API/src/Contenedor"));
 app.get('/', function (req, res) {
   res.json({
     mensaje: 'Bienvenido al servidor de Neptuno'

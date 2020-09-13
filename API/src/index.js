@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.use('/usuarios', usuariosRoutes);
 app.use('/categoria', categoriaRoutes);
 app.use('/post', postRoutes);
+app.use('/public', express.static("/home/nicocastillo/Escritorio/Prueba/API/src/Contenedor"));
 
 
 

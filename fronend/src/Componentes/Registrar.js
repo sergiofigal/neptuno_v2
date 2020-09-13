@@ -17,6 +17,7 @@ export default class Registrar extends Component {
     
 
     onSubmit = async objeto =>{
+     
         await axios.post('http://localhost:8080/usuarios/registrar',{
             nombre: this.state.nombre,
             apellido: this.state.apellido,
@@ -46,7 +47,7 @@ export default class Registrar extends Component {
 
     onChangeContrasenia = (objeto)=>{
         this.setState({
-            contrasea: objeto.target.value,
+            contrasenia: objeto.target.value,
         })
     }
 
@@ -54,21 +55,21 @@ export default class Registrar extends Component {
     render() {
         return (
             <form onSubmit={this.onSubmit}>
-                <div className="form-row">
-                    <div className="form-group col-md-6">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
                         <label for="inputEmail4">Email</label>
                         <input type="email" class="form-control" id="inputEmail4" onChange = {this.onChangeEmail} />
                     </div>
-                    <div className="form-group col-md-6">
+                    <div class="form-group col-md-6">
                         <label for="inputPassword4">Contrasenia</label>
                         <input type="text" class="form-control" id="inputPassword4" onChange = {this.onChangeContrasenia} />
                     </div>
                 </div>
-                <div className="form-row">
-                    <div className="col">
+                <div class="form-row">
+                    <div class="col">
                         <input type="text" class="form-control" placeholder="Nombre" onChange = {this.onChangeNombre} />
                     </div>
-                    <div className="col">
+                    <div class="col">
                         <input type="text" class="form-control" placeholder="Apellido" onChange = {this.onChangeApellido} />
                     </div>
                 </div>

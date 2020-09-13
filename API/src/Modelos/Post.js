@@ -4,25 +4,33 @@ let postSchema = new Schema ({
     
 tipoArchivo: String,
     nombre: String,
-    categoria: {type: Schema.Types.ObjectId, ref: "Categoria"},
+    //categoria: {type: Schema.Types.ObjectId, ref: "Categoria"},
+    categoria: String,
     usuarioCreador: {type: Schema.Types.ObjectId, ref: "Usuario"},
     puntaje: Number,
     fechaPost: Date,
+    url: String,
     comentario: [
       {
-        nickName: {type: Schema.Types.ObjectId, ref: "Usuario"},
+        email: {type: Schema.Types.ObjectId, ref: "Usuario"},
         texto: String,
         fecha: Date
       }
     ],
     cantVoto: [
       {
-        idUsuario: {type: Schema.Types.ObjectId, ref: "Autor"},
+        email: {type: Schema.Types.ObjectId, ref: "Autor"},
         tipoVoto: Number
       }
     ]
   
 })
+
+
+postSchema.methods.setImagen = function (nombreArchivo){
+this.url=`http://localhost:8080/public/${nombreArchivo}`;
+}
+
 
 
 module.exports = mongoose.model('Post', postSchema);

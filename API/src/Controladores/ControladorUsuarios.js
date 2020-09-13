@@ -24,7 +24,7 @@ router.post('/login', function (req, res) {
       })
     }
     // Valida que la contraseña escrita por el usuario, sea la almacenada en la db
-    console.log(usuarioDB.contrasenia)
+
 
 
     if (!bcrypt.compareSync(body.contrasenia, usuarioDB.contrasenia)) {
@@ -77,6 +77,7 @@ router.post('/registrar', function (req, res) {
       usuario: usuarioDB
     });
   })
+  console.log("Usuario REgistrados")
 });
 
 

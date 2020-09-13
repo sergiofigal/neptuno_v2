@@ -2,8 +2,6 @@
 
 var _Categoria = _interopRequireDefault(require("./Modelos/Categoria"));
 
-var _bodyParser = require("body-parser");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var categorias = [{

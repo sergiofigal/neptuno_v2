@@ -17,7 +17,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var router = _express.default.Router();
 
-router.get('/listaCategorias', /*#__PURE__*/function () {
+router.get('/', /*#__PURE__*/function () {
   var _ref = _asyncToGenerator(function* (req, res) {
     console.log('MOSTRAR CATEGORIA');
     res.json(yield _Categoria.default.find());

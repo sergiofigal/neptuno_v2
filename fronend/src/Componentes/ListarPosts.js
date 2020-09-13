@@ -2,17 +2,31 @@ import React, { Component } from 'react'
 import axios from 'axios';
 
 export default class ListarPosts extends Component {
-    
-    async componentDidMount(){
+
+    state={
+        post: []
+    }
+
+
+    async componentDidMount() {
         const res = await axios.get('http://localhost:8080/post/');
-    console.log(res)
+        console.log(res.data)
+        this.setState({
+            post: res.data
+        })
     }
 
 
     render() {
         return (
             <div>
-                LISTAR POSTS
+              
+                {
+                        this.state.post.map(post =><img src={post.url} />
+                        )
+                }
+               
+                
             </div>
         )
     }
