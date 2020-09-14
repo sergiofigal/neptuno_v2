@@ -93,8 +93,16 @@ router.post('/registrar', function (req, res) {
       });
     }
 
-    res.json({
+    var token = _jsonwebtoken.default.sign({
       usuario: usuarioDB
+    }, process.env.SEED_AUTENTICACION, {
+      expiresIn: process.env.CADUCIDAD_TOKEN
+    });
+
+    res.json({
+      ok: true,
+      usuario: usuarioDB,
+      token
     });
   });
   console.log("Usuario REgistrados");

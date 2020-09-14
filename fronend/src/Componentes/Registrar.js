@@ -17,13 +17,15 @@ export default class Registrar extends Component {
     
 
     onSubmit = async objeto =>{
-     
-        await axios.post('http://localhost:8080/usuarios/registrar',{
+        objeto.preventDefault();
+       const res = await axios.post('http://localhost:8080/usuarios/registrar',{
             nombre: this.state.nombre,
             apellido: this.state.apellido,
             email: this.state.email,
             contrasenia: this.state.contrasenia
-        })
+        });
+        console.log(res)
+        localStorage.setItem('token', res.data.token);
     }
 
     onChangeNombre = (objeto)=>{

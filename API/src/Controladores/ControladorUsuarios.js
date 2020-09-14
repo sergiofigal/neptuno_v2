@@ -73,8 +73,15 @@ router.post('/registrar', function (req, res) {
         err,
       });
     }
+    let token = jwt.sign({
+      usuario: usuarioDB,
+    }, process.env.SEED_AUTENTICACION, {
+      expiresIn: process.env.CADUCIDAD_TOKEN
+    })
     res.json({
-      usuario: usuarioDB
+      ok: true,
+      usuario: usuarioDB,
+      token,
     });
   })
   console.log("Usuario REgistrados")

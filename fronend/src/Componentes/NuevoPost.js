@@ -18,13 +18,15 @@ export default class NuevoPost extends Component {
 
 
 
-
+url(){
+   return `http://localhost:8080/post/${localStorage.getItem('usuario')}/nuevopost`
+}
 
 
 
     render() {
         return (
-            <form action="http://localhost:8080/post/5f55461776897a16bd76731d/nuevopost" enctype="multipart/form-data" method="POST">
+            <form  action= {this.url()} enctype="multipart/form-data" method="POST" target="_blank">
                 <div className="form-row">
                     <div className="col">
                         <input type="text" className="form-control" placeholder="Nombre" name="nombre" />

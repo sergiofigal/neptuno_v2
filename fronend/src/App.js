@@ -9,6 +9,7 @@ import NuevoPost from './Componentes/NuevoPost'
 import ListarPost from './Componentes/ListarPosts'
 import Categorias from './Componentes/Categorias'
 import Login from './Componentes/Login'
+import Logout from './Componentes/Logout'
 import PrivateRoute from './Componentes/RoutePrivado';
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       <Route path="/login" component={Login} />
       <Route path="/registrar" component={Registrar} />
       <PrivateRoute path="/nuevoPost" exact component={NuevoPost} />
-      
+      <PrivateRoute path="/logout" exact component={Logout} />
 
 
     </Router>
