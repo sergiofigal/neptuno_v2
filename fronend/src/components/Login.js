@@ -38,8 +38,8 @@ export default class Login extends React.Component {
 		this.setState({
 			logeado: true,
 		});
-
 		localStorage.setItem("usuario", token.data.usuario._id);
+		document.location.href = "/";
 	}
 
 	render() {
@@ -58,6 +58,7 @@ export default class Login extends React.Component {
 						value={this.state.email}
 						onChange={this.onChange}
 						name="email"
+						required="required"
 					/>
 					<small id="emailHelp" className="form-text text-muted">
 						Nunca compartiremos su correo electrónico con nadie.
@@ -72,10 +73,11 @@ export default class Login extends React.Component {
 						value={this.state.contrasenia}
 						onChange={this.onChange}
 						name="contrasenia"
+						required="required"
 					/>
 				</div>
 
-				<button type="submit" className="btn btn-primary">
+				<button type="submit" className="mt-3 btn btn-primary">
 					Acceder
 				</button>
 			</form>

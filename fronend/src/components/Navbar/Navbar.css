@@ -26,6 +26,10 @@
     background-image: url("../../assets/img/user-icon.svg");
 }
 
+.logout-icon {
+    background-image: url("../../assets/img/logout-icon.svg");
+}
+
 .more-icon {
     background-image: url("../../assets/img/more-icon.svg");
     margin-right: 1rem;
@@ -58,6 +62,51 @@
 
 @media (min-width: 576px) {
     .form-inline .form-control {
+        max-width: 20vw;
+    }
+}
+
+@media (min-width: 1100px) {
+    .form-inline .form-control {
         max-width: 30vw;
     }
 }
+
+.menu-icon {
+    display: block;
+    background-image: url("../../assets/img/menu-icon.svg");
+    position: absolute;
+    right: 5%;
+}
+
+@media (min-width: 830px) {
+    .menu-icon {
+        display: none;
+        position: relative;
+    }
+}
+
+@media (max-width: 829px) {
+    #basic-navbar-nav {
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        max-width: unset;
+        left: 0;
+        z-index: 999;
+        padding: 30px;
+        flex-direction: column;
+        background-color: #0e1649dd;
+        display: none !important;
+    }
+}
+
+
+@media (min-width: 830px) {
+    #basic-navbar-nav {
+        position: initial;
+    }
+}
+
+
+/* // */

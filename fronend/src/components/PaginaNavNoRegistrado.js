@@ -24,7 +24,6 @@ export default class PaginaPrincipal extends Component {
 						<li class="nav-item active">
 							<Link className="nav-link" to="/"></Link>
 						</li>
-
 						<li class="nav-item">
 							<Link className="nav-link" to="/categorias">
 								Categorias

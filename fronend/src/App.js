@@ -1,7 +1,6 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import PaginaNoRegistrado from "./components/PaginaNavNoRegistrado";
 import Registrar from "./components/Registrar";
 import NuevoPost from "./components/NuevoPost";
 import ListarPost from "./components/ListarPosts";
@@ -9,7 +8,6 @@ import Categorias from "./components/Categorias";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import PrivateRoute from "./components/RoutePrivado";
-import MemeContainer from "./components/AllMemes/MemeContainer";
 import Navbar from "./components/Navbar/Navbar";
 import LeftColumn from "./components/LeftColumn/LeftColumn";
 import RightColumn from "./components/RightColumn/RightColumn";
@@ -31,7 +29,6 @@ function App() {
 						<Route path="/registrar" component={Registrar} />
 						<Route path="/">
 							<Route path="/" exact component={ListarPost} />
-							<MemeContainer />
 						</Route>
 						<PrivateRoute path="/logout" exact component={Logout} />
 					</ReactBootstrap.Col>

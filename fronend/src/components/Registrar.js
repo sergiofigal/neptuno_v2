@@ -25,6 +25,7 @@ export default class Registrar extends Component {
 		console.log(res);
 		localStorage.setItem("token", res.data.token);
 		localStorage.setItem("usuario", res.data.usuario._id);
+		document.location.href = "/";
 	};
 
 	onChangeNombre = (objeto) => {
@@ -58,6 +59,7 @@ export default class Registrar extends Component {
 						<label for="inputEmail4">Email</label>
 						<input
 							type="email"
+							required="required"
 							class="form-control"
 							id="inputEmail4"
 							onChange={this.onChangeEmail}
@@ -67,6 +69,7 @@ export default class Registrar extends Component {
 						<label for="inputPassword4">Contraseña</label>
 						<input
 							type="text"
+							required="required"
 							class="form-control"
 							id="inputPassword4"
 							onChange={this.onChangeContrasenia}
@@ -75,23 +78,27 @@ export default class Registrar extends Component {
 				</div>
 				<div class="form-row">
 					<div class="col">
+						<label for="inputNombre">Nombre</label>
 						<input
 							type="text"
+							required="required"
 							class="form-control"
-							placeholder="Nombre"
+							id="inputNombre"
 							onChange={this.onChangeNombre}
 						/>
 					</div>
 					<div class="col">
+						<label for="inputApellido">Apellido</label>
 						<input
 							type="text"
+							required="required"
 							class="form-control"
-							placeholder="Apellido"
+							id="inputApellido"
 							onChange={this.onChangeApellido}
 						/>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary">
+				<button type="submit" class="mt-4 btn btn-primary">
 					Registrarme
 				</button>
 			</form>

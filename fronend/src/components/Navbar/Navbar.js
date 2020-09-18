@@ -1,6 +1,5 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
-import NewMeme from "../NewMeme/NewMeme";
 import "./Navbar.css";
 import NeptunoLogo from "../../assets/img/neptuno-logo-dark.svg";
 import { Link } from "react-router-dom";
@@ -10,6 +9,10 @@ export default function Navbar() {
 		return (
 			<img src={NeptunoLogo} className="logo navBarLogo" alt="Neptuno Logo" />
 		);
+	}
+
+	function showMenu() {
+		document.getElementById("basic-navbar-nav")
 	}
 
 	return (
@@ -33,7 +36,7 @@ export default function Navbar() {
 
 				<ReactBootstrap.Navbar.Collapse
 					id="basic-navbar-nav"
-					className="col-9 ml-auto navbar-collapse collapse"
+					className="col-9 ml-auto navbar-collapse collapse pl-0"
 				>
 					<ReactBootstrap.Form inline>
 						<ReactBootstrap.FormControl
@@ -48,8 +51,9 @@ export default function Navbar() {
 					</ReactBootstrap.Form>
 
 					<ReactBootstrap.Nav className="m-auto">
-						<Link className="nav-link" to="/nuevoPost">
+						<Link className="nav-link center-v-h" to="/nuevoPost">
 							Nuevo Post
+							<div className="icon more-icon ml-2"></div>
 						</Link>
 					</ReactBootstrap.Nav>
 
@@ -59,21 +63,18 @@ export default function Navbar() {
 						</Link>
 					</ReactBootstrap.Nav>
 
-					<ReactBootstrap.Nav className="m-auto">
-						<Link className="nav-link" to="/logout">
-							Logout
-						</Link>
+					<ReactBootstrap.Nav className="icon user-icon">
+						<Link className="nav-link" to="/login" id="userMenu"></Link>
 					</ReactBootstrap.Nav>
 
-					<ReactBootstrap.Nav className="icon user-icon">
-						<Link
-							className="nav-link"
-							to="/login"
-							id="userMenu"
-							to="/login"
-						></Link>
+					<ReactBootstrap.Nav
+						className="icon logout-icon ml-3"
+						onClick={showMenu}
+					>
+						<Link className="nav-link" to="/logout" id="logout"></Link>
 					</ReactBootstrap.Nav>
 				</ReactBootstrap.Navbar.Collapse>
+				<ReactBootstrap.Nav className="icon menu-icon ml-3"></ReactBootstrap.Nav>
 			</ReactBootstrap.Navbar>
 		</React.Fragment>
 	);

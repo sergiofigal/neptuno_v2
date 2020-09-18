@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-//import * as $ from 'jquery';
 export default class NuevoPost extends Component {
 	state = {
 		categorias: [],
@@ -19,45 +18,48 @@ export default class NuevoPost extends Component {
 
 	render() {
 		return (
-			<form
-				action={this.url()}
-				enctype="multipart/form-data"
-				method="POST"
-				target="_blank"
-			>
+			<form action={this.url()} enctype="multipart/form-data" method="POST">
 				<div className="form-row">
 					<div className="col">
+						<label htmlFor="inputNombre">Tïtulo del Meme</label>
 						<input
+							id="inputNombre"
 							type="text"
 							className="form-control"
-							placeholder="Nombre"
 							name="nombre"
+							required="required"
 						/>
 					</div>
 				</div>
-				<div className="form-group">
-					<label for="exampleFormControlSelect1">Seleccionar categoria</label>
+				<div className="mt-3 form-group">
+					<label htmlFor="selectCategoria">Seleccionar categoria</label>
 					<select
 						className="form-control"
-						id="exampleFormControlSelect1"
+						id="FormControlSelect1"
 						name="categoria"
+						required="required"
 					>
+						<option selected value="" disabled>
+							Selecciona una categoría
+						</option>
 						{this.state.categorias.map((categoria) => (
-							<option value={categoria.nombre}>{categoria.nombre}</option>
+							<option key={categoria.nombre} value={categoria.nombre}>
+								{categoria.nombre}
+							</option>
 						))}
 					</select>
 				</div>
-
 				<div className="form-group">
-					<label for="exampleFormControlFile1">Subir archivo</label>
+					<label htmlFor="FormControlFile1">Subir archivo</label>
 					<input
 						type="file"
 						name="image"
+						required="required"
 						className="form-control-file"
-						id="exampleFormControlFile1" /*onChange={this.onChangeImagen}*/
+						id="FormControlFile1" /*onChange={this.onChangeImagen}*/
 					/>
 				</div>
-				<button type="submit" className="btn btn-primary">
+				<button type="submit" className="mt-3 btn btn-primary">
 					Guardar
 				</button>
 			</form>
